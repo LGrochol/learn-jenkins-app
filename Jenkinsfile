@@ -16,7 +16,7 @@ pipeline {
                     npm --version
                     rm -rf node_modules
                     npm cache clean --force
-                    npm config set cache /var/lib/jenkins/.npm
+                    npm config get userconfig
                     ls -la /var/lib/jenkins/workspace/learn-jenkins-app
                     npm config get cache
                     ls -la
