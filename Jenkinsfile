@@ -12,10 +12,11 @@ pipeline {
             steps {
                 sh '''
                         ls -la
-                        node --version
-                        npm --version
-                        npm ci
-                        npm run build
+        export HOME=/var/lib/jenkins
+        cd /var/lib/jenkins/workspace/learn-jenkins-app
+        npm config set cache /var/lib/jenkins/.npm
+        npm config set userconfig /var/lib/jenkins/.npmrc
+        npm ci
                         ls -la
                 '''
             }
