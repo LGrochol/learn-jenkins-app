@@ -12,8 +12,8 @@ pipeline {
             steps {
                 sh '''
                         ls -la
-        export HOME=/var/lib/jenkins
-        exec bash -c "npm ci"
+                        npm install
+                        npm run build
                         ls -la
                 '''
             }
